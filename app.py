@@ -17,7 +17,7 @@ def saveUser():
         session["users"] = []
     return ""
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def default():
     return "Hello world"
 
