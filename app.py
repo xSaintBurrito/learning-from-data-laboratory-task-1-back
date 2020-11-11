@@ -18,7 +18,7 @@ def saveUser():
     return ""
 
 @app.route('/', methods=['POST'])
-def saveUser():
+def default():
     return "Hello world"
 
 
