@@ -1,14 +1,14 @@
 from flask import Flask, session, request
 from flask_session import Session
 import json
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 app.secret_key = '786dsadhalhd7sady8asdhyaksdnas9'
 CORS(app) 
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
-
+@cross_origin()
 @app.route('/saveUser', methods=['POST'])
 def saveUser():
     data = request.get_json()
@@ -18,12 +18,12 @@ def saveUser():
     else:
         session["users"] = []
     return ""
-
+@cross_origin()
 @app.route('/', methods=['GET'])
 def default():
     return "Hello world"
 
-
+@cross_origin()
 @app.route('/flushSession', methods=['GET'])
 def flushSession():
     if "users" in session:
@@ -32,7 +32,7 @@ def flushSession():
         session["users"] = []
     return ""
 
-
+@cross_origin()
 @app.route('/getUsersInfo', methods=['GET'])
 def getUserInfo():
     if "users" in session:
