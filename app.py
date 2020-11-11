@@ -17,6 +17,11 @@ def saveUser():
         session["users"] = []
     return ""
 
+@app.route('/', methods=['POST'])
+def saveUser():
+    return "Hello world"
+
+
 @app.route('/flushSession', methods=['GET'])
 def flushSession():
     if "users" in session:
