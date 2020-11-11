@@ -3,7 +3,7 @@ from flask_session import Session
 import json
 app = Flask(__name__)
 app.secret_key = '786dsadhalhd7sady8asdhyaksdnas9'
-SESSION_TYPE = ''
+SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
 
