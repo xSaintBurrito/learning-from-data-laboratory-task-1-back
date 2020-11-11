@@ -48,6 +48,8 @@ pytest-cov==2.8.1
 python-xlib==0.25
 qtconsole==4.6.0
 Flask-Session==0.3.1
+redis==3.4.1 
+rq==1.2.2
 reportlab==3.4.0
 requests==2.22.0
 requests-file==1.5.1
