@@ -1,8 +1,10 @@
 from flask import Flask, session, request
 from flask_session import Session
 import json
+from flask_cors import CORS
 app = Flask(__name__)
 app.secret_key = '786dsadhalhd7sady8asdhyaksdnas9'
+CORS(app) 
 SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
